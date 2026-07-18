@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Pinup';
+    src: url('fonts/PINUP.ttf') format('truetype');
+    font-weight: normal;
+    font-style:normal;
+}
+
+body {
+    font-family: 'Pinup', sans-serif;
+    color: white;
+    background-color: #7c7c7c;
+    
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 4vw;  /* superior inferior, esquerda direita */
+    z-index: 99;
+
+    ul {
+        display: flex;
+        gap: 20px;
+        list-style-type: none;
+    }
+}
+
+.icones {
+    width: 389px;
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+button {
+    font-size: 16px;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255);
+    border-radius: 4px;
+    font-family: "Pinup", sans-serif;
+    color: #182649
+
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .slide {
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4vw;
+        padding: 4vw 4vw 4vw 0;
+        
+
+        .imgCirculo {
+            margin-left: -20%;
+            margin-bottom: -5%;
+            width: 40vw;
+        }
+
+        .conteudo {
+
+            h2 {
+                font-size: 5vw;
+            }
+
+            p {
+                width: 100%;
+                font-size: clamp(14px, 1vw, 20px); /* tamanho mínimo, padrão e máximo */
+                margin-bottom: clamp(24px, 2vw, 40px);
+                
+            }
+        }
+
+        .latas {
+            display: flex;
+
+            img {
+                width: 14vw;
+            }
+
+            img:nth-child(2){
+                scale: .8;
+            }
+        }
+    }
+}
