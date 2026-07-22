@@ -1,3 +1,5 @@
+gsap.registerPlugin(SplitText)
+
 // MAPEAR AS COISAS QUE SERÃO INTERATIVAS
 
 const latasMenores = document.querySelectorAll(".latas img:nth-child(2)");
@@ -31,3 +33,13 @@ latasMenores.forEach((lataMenor) => {
 
     };    
 });
+
+const split = SplitText.create(".conteudo h2", {
+    type: "chars",
+    mask: "chars"
+});
+
+gsap.from(split.chars, {
+    y: 80,
+    stagger: .1
+})

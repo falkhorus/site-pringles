@@ -29,7 +29,7 @@ header {
 
     ul {
         display: flex;
-        gap: 20px;
+        gap: 32px;
         list-style-type: none;
     }
 }
@@ -75,22 +75,43 @@ button {
         z-index: 1;
 
         .imgCirculo {
+            transform: rotate(-50deg);
+            transition: transform .5s;
+        }
+
+        .imgCirculo {
             margin-left: -20%;
             margin-bottom: -5%;
             width: 40vw;
+            border-radius: 50%; /* 50% para deixar ou se sertificar que a imagem é redendo e aplicar a borda branca abaixo */
+            border: 5px solid #FFFFFF;
+            
         }
 
         .conteudo {
 
             h2 {
-                font-size: 5vw;
+                font-size: 4vw;
             }
 
             p {
                 width: 100%;
                 font-size: clamp(14px, 1vw, 20px); /* tamanho mínimo, padrão e máximo */
                 margin-bottom: clamp(24px, 2vw, 40px);
+                margin-top: clamp(16px, 1vw, 40px);
+                letter-spacing: 2px;
                 
+                
+                
+            }
+
+            h2, p, button {
+                opacity: 0;
+                transition: all 0.5s 1s;
+            }
+
+            button {
+                transform: translateY(20px);
             }
         }
 
@@ -113,6 +134,30 @@ button {
         clip-path: circle(150vw at 89% 50%);
         transition: opacity .1s, clip-path 1s;  /*  opacity: tempo para a opacidade acontecer, tempo para clippath acontecer */
         z-index: 2;
+
+        h2, p, button {
+            opacity: 1;
+        }
+
+        .imgCirculo {
+            transform: rotate(60deg);     /*  tempo para a rotação acontecer */
+            transition: transform .5s .3s; /*  tempo para a rotação acontecer, delay */
+        }
+
+        h2 {
+            transition: opacity 0.5s 0.5s; /*  tempo para a opacidade acontecer, delay */
+        }
+
+        p {
+            transition: opacity 0.5s 0.8s;
+        }
+
+        button {
+            transform: translateY(0px); 
+            transition: opacity 0.5 1s, transform .5s 1s; /*  tempo para a opacidade acontecer, delay -- tempo para a transformação acontecer, delay */
+        }
+
+
     }
 
     .slide:nth-child(2) {
