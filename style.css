@@ -54,8 +54,21 @@ button {
 
 .slider {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
+    overflow: hidden;
+    position: relative;
+
+    .logoFundo {
+        position: absolute;
+        z-index: 3;
+        right: -12%;
+        bottom: -22%;
+        width: 50vw;
+        mix-blend-mode: color-dodge; /*  modo de mesclagem da imagem com o fundo */
+        
+
+    }
     
 
     .slide {
@@ -116,7 +129,9 @@ button {
         }
 
         .latas {
+            position: relative;
             display: flex;
+            z-index: 4;
 
             img {
                 width: 14vw;
@@ -176,4 +191,75 @@ button {
         background: linear-gradient(100deg, #008E5E 2.57%, #005235 95.91%);
     }
     
+}
+
+/* ===============================
+   CONTROLES DO SLIDER (Versão Botões)
+   =============================== */
+.controles-slider {
+    position: absolute;
+    bottom: 12%; 
+    left: 25%; 
+    width: 35vw; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10; 
+}
+
+/* Container das bolinhas */
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+/* Estilo Base para as Bolinhas (agora são botões) */
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none; /* Remove a borda padrão do botão */
+    padding: 0;   /* Remove o espaçamento padrão */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Dot ativo (estilo pílula) */
+.dot.ativo {
+    width: 24px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.dot:hover {
+    background-color: #ffffff;
+}
+
+/* Container das Setas */
+.setas {
+    display: flex;
+    gap: 12px;
+}
+
+/* Estilo Base para as Setas (agora são botões) */
+.seta {
+    width: 45px;
+    height: 45px;
+    background-color: transparent; /* Remove o fundo cinza padrão */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Nossa borda customizada */
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.seta:hover {
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.15);
 }
