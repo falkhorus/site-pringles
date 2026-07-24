@@ -125,6 +125,12 @@ button {
             img:nth-child(2){
                 scale: .8;
                 cursor: pointer;
+                transition: scale .3s;
+
+                &:hover {
+                    scale: 0.83;
+                    
+                }
             }
         }
     }
@@ -145,7 +151,7 @@ button {
         }
 
         h2 {
-            transition: opacity 0.5s 0.5s; /*  tempo para a opacidade acontecer, delay */
+            transition: opacity .5s 0.5s; /*  tempo para a opacidade acontecer, delay */
         }
 
         p {

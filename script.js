@@ -13,33 +13,60 @@ const slides = document.querySelectorAll(".slide")
 
 let = contador = 0;
 
+let = clicar = true
+
 console.log(contador);
 
 
 latasMenores.forEach((lataMenor) => {
     lataMenor.onclick = () => {
-        const slideAtivo = document.querySelector(".slide.ativo");
-        slideAtivo.classList.remove("ativo");
-
-        if (contador == 3) {
-            contador = 0;
-        } else {
-            contador = contador +1;
-        }
-
-        console.log(contador);
         
-        slides[contador].classList.add("ativo");
 
-    };    
+        if (clicar) {
+            clicar = false
+            const slideAtivo = document.querySelector(".slide.ativo");
+            slideAtivo.classList.remove("ativo");
+
+            if (contador == 3) {
+                contador = 0;
+            } else {
+                contador = contador + 1;
+            }
+
+            console.log(contador);
+
+            slides[contador].classList.add("ativo");
+            animarTitulo();
+
+            setTimeout(()=>{
+
+                clicar = true
+
+            }, 1500)
+
+        };
+
+
+
+    }
+
 });
 
-const split = SplitText.create(".conteudo h2", {
-    type: "chars",
-    mask: "chars"
-});
+function animarTitulo() {
 
-gsap.from(split.chars, {
-    y: 80,
-    stagger: .1
-})
+    const split = SplitText.create(".slide.ativo h2", {
+        type: "chars",
+        mask: "chars"
+    });
+
+    gsap.from(split.chars, {
+        y: "100%",
+        duration: .5,
+        stagger: .06,
+        delay: .5,
+    })
+
+}
+
+
+
