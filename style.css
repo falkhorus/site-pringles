@@ -31,6 +31,38 @@ header {
         display: flex;
         gap: 32px;
         list-style-type: none;
+        
+        /* NOVAS REGRAS DO EFEITO ABAIXO */
+        
+        .menu-link {
+            display: inline-block;
+            overflow: hidden; /* A máscara que esconde o clone no topo */
+            text-decoration: none; /* Tira o sublinhado padrão de links */
+            color: white; /* Garante que o texto fique branco */
+            font-size: 16px; 
+            
+            /* Opcional: Para garantir que o link não quebre o layout flex */
+            height: 1.2em; 
+        }
+
+        .texto-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            /* A transição suave do movimento */
+            transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.26, 1.55); /* tempo que o movimento ocorre, tipo de movimento (ease-in-out, linear, etc.) */
+        }
+
+        .texto-clone {
+            position: absolute;
+            top: -100%; /* Deixa a palavra clone "estacionada" em cima */
+            left: 0;
+        }
+
+        /* Quando passar o mouse no link, move o container */
+        .menu-link:hover .texto-container {
+            transform: translateY(100%);
+        }
     }
 }
 
@@ -39,6 +71,21 @@ header {
     display: flex;
     justify-content: end;
     gap: 20px;
+
+    
+    img {
+        
+        transition: transform 0.3s ease; 
+        
+        
+        cursor: pointer; 
+    }
+
+    
+    img:hover {
+        
+        transform: scale(1.15); 
+    }
 }
 
 button {
