@@ -240,9 +240,9 @@ button {
     
 }
 
-/* ===============================
+/* 
    CONTROLES DO SLIDER (Versão Botões)
-   =============================== */
+    */
 .controles-slider {
     position: absolute;
     bottom: 12%; 
@@ -309,4 +309,63 @@ button {
 .seta:hover {
     border-color: white;
     background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* SEÇÃO 2 */
+.secao2 {
+  width: 100%;
+  padding: 8% 8% 0;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4vw;
+  
+}
+
+/* Linha Vetorial em Fundo */
+.linhaVetorial svg {
+  position: absolute;
+  width: 100vw;
+  top: 16%;
+  left: 0;
+  height: auto;
+}
+
+/* Faixa Animada (Marquee) */
+.marquee {
+  position: absolute;
+  top: -12.5vw;
+  left: 0;
+  width: 100%;
+  height: 30vw;
+  overflow: hidden;
+}
+
+.marquee-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template: 1fr / 1fr;
+}
+
+.marquee-bg-svg {
+  color: #c71729; /* Cor da faixa vermelha */
+  grid-area: 1/1;
+  z-index: 0;
+}
+
+.marquee-text-svg {
+  z-index: 1;
+  grid-area: 1/1;
+}
+
+.marquee-text-svg text {
+  fill: #ffffff;
+  font-size: 5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  user-select: none;
 }
