@@ -328,7 +328,7 @@ button {
   position: absolute;
   width: 100vw;
   top: 16%;
-  left: 0;
+  left: -0;
   height: auto;
 }
 
@@ -336,7 +336,7 @@ button {
 .marquee {
   position: absolute;
   top: -12.5vw;
-  left: 0;
+  left: 0vw;
   width: 100%;
   height: 30vw;
   overflow: hidden;
@@ -369,3 +369,67 @@ button {
   letter-spacing: -0.03em;
   user-select: none;
 }
+
+
+/* ESTILOS DAS ETAPAS E CARDS */
+.etapa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 9; /* Mantém os cards acima da linha vetorial */
+  gap: 4vw;
+  margin-bottom: 6vw;
+}
+
+.etapa .lataEtapa {
+  width: 12vw;
+  filter: drop-shadow(10px 15px 15px rgba(0, 0, 0, 0.3));
+}
+
+.etapa .card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 50%;
+  border-radius: 4vw;
+  padding: 2vw 3vw 3vw;
+  color: #ffffff;
+}
+
+.etapa .card h2 {
+  font-size: 6vw;
+  line-height: 1;
+}
+
+.etapa .card p {
+  font-size: clamp(14px, 1.3vw, 20px);
+  margin-top: 1vw;
+}
+
+.etapa .iconeCard {
+  position: absolute;
+  width: 7vw;
+  right: 6%;
+  top: -15%;
+  filter: drop-shadow(3px 4px 1px rgba(0, 0, 0, 0.25));
+}
+
+.etapa .seta {
+  position: absolute;
+  width: 6vw;
+  opacity: 0.7;
+}
+
+/* VARIANTES DE COR E ROTAÇÃO POR SABOR */
+.etapa.laranja .card { background-color: #feb859; }
+.etapa.laranja .seta { right: 22%; top: 30%; transform: rotate(40deg); }
+.etapa.laranja .lataEtapa { transform: rotate(20deg); }
+
+.etapa.azul .card { background-color: #57c3ee; }
+.etapa.azul .seta { right: 4%; top: 50%; }
+.etapa.azul .lataEtapa { transform: rotate(-10deg); }
+
+.etapa.verde .card { background-color: #39b88d; }
+.etapa.verde .seta { right: 3%; top: 36%; transform: rotate(140deg); }
+.etapa.verde .lataEtapa { transform: rotate(40deg); }
