@@ -97,4 +97,32 @@ function animarTitulo() {
 }
 
 
+// ANIMAÇÕES COM SCROLLTRIGGER
+
+
+// 1. ANIMAÇÃO DA LINHA VETORIAL
+const linhaPath = document.querySelector(".linhaVetorial svg path");
+const linhaComprimento = linhaPath.getTotalLength();
+
+// Configuração inicial: esconde a linha
+gsap.set(linhaPath, {
+    strokeDasharray: linhaComprimento,
+    strokeDashoffset: linhaComprimento,
+});
+
+// Cria a linha do tempo atrelada ao scroll
+const timeline = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".secao2",
+        start: "20% 80%", // Inicia quando 30% da secao2 atingir 80% da tela (de cima para baixo)
+        end: "bottom 50%", // Termina quando o fundo da secao2 atingir o meio (50%) da tela
+        scrub: 1, // O scrub vincula a animação à barra de rolagem. O valor 3 dá um "atraso" suave de 3 segundos.
+    }
+});
+
+// Animação para desenhar a linha
+timeline.to(linhaPath, {
+    strokeDashoffset: 0,
+    duration: 5,
+});
 
